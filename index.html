@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curve Shift AI</title>
+    <!--
+      Color Scheme for AskCurveShift.ai
+
+      Primary (Emerald):       #10B981 (bg-emerald-500, hover:bg-emerald-600)
+      Accent (Cyan):           #22D3EE (text-cyan-400, hover:text-cyan-500)
+      Background:              #F9FAFB (bg-gray-50)
+      Surface/Panel:           #FFFFFF (bg-white)
+      Text Primary:            #111827 (text-gray-900)
+      Text Muted:              #6B7280 (text-gray-500)
+      Border:                  #E5E7EB (border-gray-200)
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <section class="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 lg:px-24 py-12 sm:py-16 lg:py-20 gap-8 lg:gap-12 max-w-7xl mx-auto">
+
+      <!-- Left: Hero Text -->
+      <div class="max-w-xl">
+        <!-- Brand name -->
+        <div class="mb-8 sm:mb-12">
+          <div class="text-2xl sm:text-3xl font-extrabold text-gray-900 uppercase">CURVE SHIFT AI</div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <button id="whats-coming-btn" class="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white px-4 py-2 sm:px-3 sm:py-1.5 rounded-full text-sm font-medium transition-colors min-h-[44px] sm:min-h-0">
+            What's coming
+          </button>
+          <a href="#" id="who-we-are-link" class="text-gray-500 hover:text-emerald-500 active:text-emerald-600 text-sm font-medium transition-colors py-2 sm:py-0 min-h-[44px] sm:min-h-0 flex items-center">
+            Who we are →
+          </a>
+        </div>
+
+        <h1 id="main-header" class="mt-6 text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-gray-900">
+          Accelerate Your Sales S-Curve with Real-Time, Agentic AI
+        </h1>
+
+        <p id="main-description" class="mt-4 text-lg text-gray-500">
+          Curve Shift is a real-time, agentic AI designed to accelerate your Sales S-Curve and drive sustainable revenue growth — not through post-call analysis, but by influencing outcomes while they're still unfolding. And when the conversation ends, Curve Shift automates the tedious follow-up and admin work that slows teams down — so AEs and SEs can focus on selling, not systems.
+        </p>
+
+        <form name="email-signup" method="POST" data-netlify="true" class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md">
+          <input type="hidden" name="form-name" value="email-signup" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            class="flex-1 border border-gray-200 rounded-lg px-4 py-3 sm:py-2 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors min-h-[44px]"
+          />
+          <button
+            type="submit"
+            class="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white text-base sm:text-sm font-medium px-6 py-3 sm:px-4 sm:py-2 rounded-lg shadow transition-colors whitespace-nowrap min-h-[44px]"
+          >
+            Stay Updated
+          </button>
+        </form>
+      </div>
+
+
+
+      <!-- Desktop: Full Terminal Interface Mockup -->
+      <div class="hidden lg:block lg:flex-1">
+        <div class="w-full max-w-6xl rounded-xl border border-gray-200 shadow-xl overflow-hidden bg-white">
+          <!-- Terminal Header -->
+          <div class="flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-200">
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="text-gray-600 text-sm font-mono">curve-shift-ai@production</div>
+            <div class="w-16"></div> <!-- Spacer for centering -->
+          </div>
+
+          <!-- Terminal Content -->
+          <div class="p-3 font-mono text-xs text-gray-800 bg-white h-[28rem] overflow-hidden relative">
+            <!-- Subtle background pattern -->
+            <div class="absolute inset-0 opacity-5 bg-gradient-to-br from-emerald-50 to-cyan-50"></div>
+
+            <div class="relative space-y-1">
+              <!-- Status indicators with icons and compact spacing -->
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-emerald-500">●</span>
+                <span class="flex-1">Connecting to Zoom audio</span>
+                <span class="text-xs text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">CONNECTED</span>
+              </div>
+
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-blue-500">●</span>
+                <span class="flex-1">Generating live transcript</span>
+                <span class="text-xs text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full">ACTIVE</span>
+              </div>
+
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-cyan-500">●</span>
+                <span class="flex-1">First Meeting Deck detected</span>
+                <span class="text-xs text-cyan-600 bg-cyan-50 px-1.5 py-0.5 rounded-full">ANALYZED</span>
+              </div>
+
+              <!-- Critical alert with compact enhanced styling -->
+              <div class="flex items-center space-x-2 py-1.5 px-2 bg-red-50 border-l-3 border-red-500 rounded-r-lg my-1">
+                <span class="text-red-500 animate-pulse">⚠</span>
+                <span class="text-gray-700 font-medium flex-1">
+                  <span class="text-red-600 font-bold">Objection detected</span> → Generating response
+                </span>
+                <span class="text-xs text-red-600 bg-red-100 px-1.5 py-0.5 rounded-full font-semibold">URGENT</span>
+              </div>
+
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-orange-500">●</span>
+                <span class="flex-1">Pain point tagged</span>
+                <span class="text-xs text-orange-600 bg-orange-50 px-1.5 py-0.5 rounded-full">TAGGED</span>
+              </div>
+
+              <!-- Strategic insight with compact enhanced styling -->
+              <div class="flex items-center space-x-2 py-1.5 px-2 bg-yellow-50 border-l-3 border-yellow-500 rounded-r-lg my-1">
+                <span class="text-yellow-600">💡</span>
+                <span class="text-gray-700 flex-1">
+                  <span class="text-yellow-700 font-semibold">Suggesting pivot to adjacent platform capability</span>
+                </span>
+                <span class="text-xs text-yellow-700 bg-yellow-100 px-1.5 py-0.5 rounded-full font-semibold">STRATEGIC</span>
+              </div>
+
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-purple-500">●</span>
+                <span class="flex-1">Generating "The 3 Why's"</span>
+                <span class="text-xs text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded-full">GENERATED</span>
+              </div>
+
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-indigo-500">●</span>
+                <span class="flex-1">SE demo detected</span>
+                <span class="text-xs text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded-full">DETECTED</span>
+              </div>
+
+              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
+                <span class="text-teal-500">●</span>
+                <span class="flex-1">Based on customer cues, prompting AE to steer SE direction</span>
+                <span class="text-xs text-teal-600 bg-teal-50 px-1.5 py-0.5 rounded-full">GUIDED</span>
+              </div>
+
+              <!-- Advanced AI capability with compact enhanced styling -->
+              <div class="flex items-center space-x-2 py-1.5 px-2 bg-yellow-50 border-l-3 border-yellow-500 rounded-r-lg my-1">
+                <span class="text-yellow-600">🔍</span>
+                <span class="text-gray-700 flex-1">
+                  <span class="text-yellow-700 font-semibold">Novel technical objection flagged — using agentic search of the entire codebase to determine response</span>
+                </span>
+                <span class="text-xs text-yellow-700 bg-yellow-100 px-1.5 py-0.5 rounded-full font-semibold">AI SEARCH</span>
+              </div>
+
+              <!-- Completion status with compact success styling -->
+              <div class="flex items-center space-x-2 py-1.5 px-2 bg-emerald-50 border-l-3 border-emerald-500 rounded-r-lg mt-2">
+                <span class="text-emerald-500">✓</span>
+                <span class="text-gray-700 font-medium flex-1">Call complete — updating MEDDPICC in Salesforce and posting summary to Slack</span>
+                <span class="text-xs text-emerald-600 bg-emerald-100 px-1.5 py-0.5 rounded-full font-semibold">COMPLETE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Content data for different sections
+      const contentData = {
+        home: {
+          header: "Accelerate Your Sales S-Curve with Real-Time, Agentic AI",
+          description: "Curve Shift is a real-time, agentic AI designed to accelerate your Sales S-Curve and drive sustainable revenue growth — not through post-call analysis, but by influencing outcomes while they're still unfolding. And when the conversation ends, Curve Shift automates the tedious follow-up and admin work that slows teams down — so AEs and SEs can focus on selling, not systems."
+        },
+        whoWeAre: {
+          header: "We Didn’t Follow the Sales Playbook — We Rewrote It.",
+          description: [
+            "Curve Shift wasn't founded by outsiders guessing at sales problems — it was built by the team that led GTM innovation inside one of the world's leading cybersecurity companies. As founding members of a skunkworks-style product, sales, and strategy group, we launched new lines of business, ran complex sales motions, and lived the daily friction between ambition and execution.",
+            "We didn't just watch AI emerge — we applied it firsthand. We saw how real-time intelligence could radically accelerate the Sales S-Curve. But we also saw where the current tools failed: too reactive, too generic, and built for reporting, not real-time performance.",
+            "We're not here to chase the latest AI hype cycle — we're here to build what we wished we had. Curve Shift is the product of lived experience: a purpose-built, agentic AI that understands the flow of live conversations, drives decisive action, and frees AEs and SEs to do their best work — faster, smarter, and at scale."
+          ]
+        }
+      };
+
+      // Get DOM elements
+      const whoWeAreLink = document.getElementById('who-we-are-link');
+      const whatsComingBtn = document.getElementById('whats-coming-btn');
+      const mainHeader = document.getElementById('main-header');
+      const mainDescription = document.getElementById('main-description');
+
+      // Track current state
+      let currentView = 'home';
+
+      // CSS class definitions for styling swap
+      const buttonClasses = 'bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-full text-sm font-medium transition-colors';
+      const linkClasses = 'text-gray-500 hover:text-emerald-500 text-sm font-medium transition-colors';
+
+      // Function to swap navigation styling
+      function swapNavigationStyling(activeSection) {
+        if (activeSection === 'whoWeAre') {
+          // Make "Who we are" the active button, "What's coming" the link
+          whoWeAreLink.className = buttonClasses;
+          whoWeAreLink.innerHTML = 'Who we are';
+
+          whatsComingBtn.className = linkClasses;
+          whatsComingBtn.innerHTML = '← What\'s coming';
+        } else {
+          // Make "What's coming" the active button, "Who we are" the link
+          whatsComingBtn.className = buttonClasses;
+          whatsComingBtn.innerHTML = 'What\'s coming';
+
+          whoWeAreLink.className = linkClasses;
+          whoWeAreLink.innerHTML = 'Who we are →';
+        }
+      }
+
+      // Function to update content with smooth transition
+      function updateContent(contentKey) {
+        const content = contentData[contentKey];
+        if (!content) return;
+
+        // Add fade-out effect
+        mainHeader.style.opacity = '0.5';
+        mainDescription.style.opacity = '0.5';
+
+        // Update content after brief delay for smooth transition
+        setTimeout(() => {
+          mainHeader.textContent = content.header;
+
+          // Handle description - check if it's an array (multiple paragraphs) or string (single paragraph)
+          if (Array.isArray(content.description)) {
+            // Clear existing content
+            mainDescription.innerHTML = '';
+
+            // Create separate paragraph elements for better spacing
+            content.description.forEach((paragraph, index) => {
+              const p = document.createElement('p');
+              p.className = 'mb-4 last:mb-0'; // Add margin bottom except for last paragraph
+
+              // Check if this is the third paragraph (index 2) and contains the quote to highlight
+              if (index === 2 && paragraph.includes("We're not here to chase the latest AI hype cycle — we're here to build what we wished we had.")) {
+                // Split the paragraph around the quote
+                const quote = "We're not here to chase the latest AI hype cycle — we're here to build what we wished we had.";
+                const parts = paragraph.split(quote);
+
+                // Add the text before the quote
+                if (parts[0]) {
+                  const beforeText = document.createTextNode(parts[0]);
+                  p.appendChild(beforeText);
+                }
+
+                // Create and style the highlighted quote
+                const highlightedQuote = document.createElement('span');
+                highlightedQuote.textContent = quote;
+                highlightedQuote.className = 'block text-xl font-bold text-emerald-600 my-3 leading-relaxed';
+                p.appendChild(highlightedQuote);
+
+                // Add the text after the quote
+                if (parts[1]) {
+                  const afterText = document.createTextNode(parts[1]);
+                  p.appendChild(afterText);
+                }
+              } else {
+                // Regular paragraph without highlighting
+                p.textContent = paragraph;
+              }
+
+              mainDescription.appendChild(p);
+            });
+          } else {
+            // Single paragraph (for home content)
+            mainDescription.textContent = content.description;
+          }
+
+          // Fade back in
+          mainHeader.style.opacity = '1';
+          mainDescription.style.opacity = '1';
+
+          // Update navigation styling
+          swapNavigationStyling(contentKey);
+
+          currentView = contentKey;
+        }, 150);
+      }
+
+      // Add click event listener to "Who we are" link
+      whoWeAreLink.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+
+        if (currentView === 'home') {
+          updateContent('whoWeAre');
+        } else {
+          updateContent('home');
+        }
+      });
+
+      // Add click event listener to "What's coming" button/link
+      whatsComingBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default behavior
+
+        if (currentView === 'whoWeAre') {
+          updateContent('home');
+        }
+        // If already on home, do nothing (or could add future functionality)
+      });
+
+      // Add smooth transition styles
+      mainHeader.style.transition = 'opacity 0.3s ease-in-out';
+      mainDescription.style.transition = 'opacity 0.3s ease-in-out';
+    </script>
+  </body>
+</html>
