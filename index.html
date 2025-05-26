@@ -30,7 +30,7 @@
         </div>
 
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <button id="whats-coming-btn" class="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white px-4 py-2 sm:px-3 sm:py-1.5 rounded-full text-sm font-medium transition-colors min-h-[44px] sm:min-h-0">
+          <button id="whats-coming-btn" class="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white px-4 py-2 sm:px-3 sm:py-1.5 rounded-full text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 flex items-center justify-center">
             What's coming
           </button>
           <a href="#" id="who-we-are-link" class="text-gray-500 hover:text-emerald-500 active:text-emerald-600 text-sm font-medium transition-colors py-2 sm:py-0 min-h-[44px] sm:min-h-0 flex items-center">
@@ -195,8 +195,8 @@
       let currentView = 'home';
 
       // CSS class definitions for styling swap
-      const buttonClasses = 'bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-full text-sm font-medium transition-colors';
-      const linkClasses = 'text-gray-500 hover:text-emerald-500 text-sm font-medium transition-colors';
+      const buttonClasses = 'bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white px-4 py-2 sm:px-3 sm:py-1.5 rounded-full text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 flex items-center justify-center';
+      const linkClasses = 'text-gray-500 hover:text-emerald-500 active:text-emerald-600 text-sm font-medium transition-colors py-2 sm:py-0 min-h-[44px] sm:min-h-0 flex items-center';
 
       // Function to swap navigation styling
       function swapNavigationStyling(activeSection) {
