@@ -1,315 +1,437 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Curve Shift AI</title>
-    <!--
-      Color Scheme for AskCurveShift.ai
+<html lang="en" class="h-full scroll-smooth bg-white antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curve Shift AI - Accelerate Your Sales S-Curve with Real-Time, Agentic AI</title>
+  <meta name="description" content="Curve Shift is a real-time, agentic AI designed to accelerate your Sales S-Curve and drive sustainable revenue growth — not through post-call analysis, but by influencing outcomes while they're still unfolding.">
 
-      Primary (Emerald):       #10B981 (bg-emerald-500, hover:bg-emerald-600)
-      Accent (Cyan):           #22D3EE (text-cyan-400, hover:text-cyan-500)
-      Background:              #F9FAFB (bg-gray-50)
-      Surface/Panel:           #FFFFFF (bg-white)
-      Text Primary:            #111827 (text-gray-900)
-      Text Muted:              #6B7280 (text-gray-500)
-      Border:                  #E5E7EB (border-gray-200)
-    -->
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-50 text-gray-900">
-    <section class="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 lg:px-24 py-12 sm:py-16 lg:py-20 gap-8 lg:gap-12 max-w-7xl mx-auto">
-      <!-- Left: Hero Text -->
-      <div class="max-w-xl">
-        <!-- Brand name -->
-        <div class="mb-4 sm:mb-6">
-          <div class="text-2xl sm:text-3xl font-extrabold text-gray-900 uppercase">CURVE SHIFT AI</div>
-          <p class="mt-2 text-sm text-gray-400 font-normal">
-            In stealth — already shifting the curve.
+  <!-- Google Fonts: Inter and Lexend -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Custom Tailwind Configuration */
+    @layer base {
+      :root {
+        --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+        --font-lexend: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+      }
+
+      body {
+        font-family: var(--font-inter);
+      }
+    }
+
+    /* Custom font utilities */
+    .font-sans {
+      font-family: var(--font-inter);
+    }
+
+    .font-display {
+      font-family: var(--font-lexend);
+    }
+
+    /* Backdrop blur support */
+    .backdrop-blur-sm {
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+  </style>
+
+  <script>
+    // Tailwind configuration
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Lexend', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="flex h-full flex-col">
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+  <header class="bg-white py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="relative z-50 flex items-center justify-between">
+        <div class="flex items-center gap-x-8">
+          <a href="#" aria-label="Home" class="flex items-center">
+            <span class="text-xl font-bold text-slate-900">CURVE SHIFT AI</span>
+          </a>
+          <div class="hidden md:flex md:gap-x-1">
+            <a href="#why-now" class="text-sm font-medium text-gray-900 hover:text-gray-600 px-4 py-2">Why Now</a>
+            <a href="#why-anything" class="text-sm font-medium text-gray-900 hover:text-gray-600 px-4 py-2">Why Anything</a>
+            <a href="#why-curve-shift" class="text-sm font-medium text-gray-900 hover:text-gray-600 px-4 py-2">Why Curve Shift</a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="relative z-10 flex h-8 w-8 items-center justify-center" aria-label="Toggle Navigation">
+            <svg aria-hidden="true" class="h-3.5 w-3.5 overflow-visible stroke-slate-700" fill="none" stroke-width="2" stroke-linecap="round">
+              <path d="M0 1H14M0 7H14M0 13H14" class="origin-center transition" id="menu-icon-open"></path>
+              <path d="M2 2L12 12M12 2L2 12" class="origin-center transition scale-90 opacity-0" id="menu-icon-close"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Panel -->
+      <div id="mobile-menu" class="hidden mt-4 rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5">
+        <a href="#why-now" class="block w-full p-2">Why Now</a>
+        <a href="#why-anything" class="block w-full p-2">Why Anything</a>
+        <a href="#why-curve-shift" class="block w-full p-2">Why Curve Shift</a>
+        <a href="/app" class="block w-full p-2">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================
+       MAIN CONTENT
+       ======================================== -->
+  <main>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl text-center">
+          <!-- Main Heading -->
+          <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+            If your competitor had
+            <span class="relative whitespace-nowrap text-emerald-600">
+              <svg aria-hidden="true" viewBox="0 0 418 42" class="absolute top-2/3 left-0 h-[0.58em] w-full fill-emerald-300/70" preserveAspectRatio="none">
+                <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
+              </svg>
+              <span class="relative">Curve Shift</span>
+            </span>
+            … you'd lose the deal.
+          </h1>
+
+          <!-- Subheading -->
+          <p class="mt-8 text-xl sm:text-2xl font-medium text-slate-700 leading-relaxed max-w-3xl mx-auto">
+            <span class="text-emerald-600 font-bold">Your</span> AE who blows out the number. <span class="text-emerald-600 font-bold">Your</span> SE who handles any Competitor Champion. Now scaled across every customer call in your org — in real time, through agentic AI.
           </p>
         </div>
-
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <button id="whats-coming-btn" class="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white px-4 py-2 sm:px-3 sm:py-1.5 rounded-full text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 flex items-center justify-center">
-            What's coming
-          </button>
-          <a href="#" id="who-we-are-link" class="text-gray-500 hover:text-emerald-500 active:text-emerald-600 text-sm font-medium transition-colors py-2 sm:py-0 min-h-[44px] sm:min-h-0 flex items-center">
-            Who we are →
-          </a>
-        </div>
-
-        <h1 id="main-header" class="mt-6 text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-gray-900">
-          Accelerate Your Sales S-Curve with Real-Time, Agentic AI
-        </h1>
-
-        <p id="main-description" class="mt-4 text-lg text-gray-500">
-          Curve Shift is a real-time, agentic AI designed to accelerate your Sales S-Curve and drive sustainable revenue growth — not through post-call analysis, but by influencing outcomes while they're still unfolding. And when the conversation ends, Curve Shift automates the tedious follow-up and admin work that slows teams down — so AEs and SEs can focus on selling, not systems.
-        </p>
-
-        <form name="email-signup" method="POST" data-netlify="true" class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md">
-          <input type="hidden" name="form-name" value="email-signup" />
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-            class="flex-1 border border-gray-200 rounded-lg px-4 py-3 sm:py-2 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors min-h-[44px]"
-          />
-          <button
-            type="submit"
-            class="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white text-base sm:text-sm font-medium px-6 py-3 sm:px-4 sm:py-2 rounded-lg shadow transition-colors whitespace-nowrap min-h-[44px]"
-          >
-            Stay Updated
-          </button>
-        </form>
       </div>
+    </section>
 
-
-
-      <!-- Desktop: Full Terminal Interface Mockup -->
-      <div class="hidden lg:block lg:flex-1">
-        <div class="w-full max-w-6xl rounded-xl border border-gray-200 shadow-xl overflow-hidden bg-white">
-          <!-- Terminal Header -->
-          <div class="flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-200">
-            <div class="flex items-center space-x-2">
-              <div class="w-3 h-3 rounded-full bg-red-500"></div>
-              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div class="text-gray-600 text-sm font-mono">curve-shift-ai@production</div>
-            <div class="w-16"></div> <!-- Spacer for centering -->
+    <!-- ========================================
+         WHY ANYTHING SECTION
+         ======================================== -->
+    <section id="why-anything" class="bg-emerald-600 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-5xl">
+          <!-- Section Header -->
+          <div class="mx-auto max-w-2xl text-center mb-16 sm:mb-20">
+            <h2 class="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+              Why Anything
+            </h2>
+            <p class="mt-6 text-lg leading-7 text-white">
+              Because the two things that drive revenue — insights and expertise — don't scale.
+            </p>
           </div>
 
-          <!-- Terminal Content -->
-          <div class="p-3 font-mono text-xs text-gray-800 bg-white h-[28rem] overflow-hidden relative">
-            <!-- Subtle background pattern -->
-            <div class="absolute inset-0 opacity-5 bg-gradient-to-br from-emerald-50 to-cyan-50"></div>
+          <!-- Content Blocks -->
+          <div class="space-y-12 sm:space-y-16">
 
-            <div class="relative space-y-1">
-              <!-- Status indicators with icons and compact spacing -->
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-emerald-500">●</span>
-                <span class="flex-1">Connecting to Zoom audio</span>
-                <span class="text-xs text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">CONNECTED</span>
+            <!-- Problem 1: Insights Don't Scale -->
+            <div class="mx-auto max-w-3xl">
+              <h3 class="font-display text-xl font-semibold text-white mb-4 sm:text-2xl">
+                Insights Don't Scale
+              </h3>
+              <div class="space-y-4 text-base leading-7 text-white sm:text-lg sm:leading-8">
+                <p>
+                  Valuable insights are discovered daily in customer calls — objections handled perfectly, competitive positioning that lands, questions that unlock urgency.
+                </p>
+                <p>
+                  But those insights get lost in Slack threads, buried in training decks, or forgotten before they become repeatable wins.
+                </p>
+                <p>
+                  Traditional enablement distributes knowledge slowly and inconsistently. By the time it reaches the team, the market has already moved.
+                </p>
+              </div>
+            </div>
+
+            <!-- Problem 2: Expertise Doesn't Scale -->
+            <div class="mx-auto max-w-3xl">
+              <h3 class="font-display text-xl font-semibold text-white mb-4 sm:text-2xl">
+                Expertise Doesn't Scale
+              </h3>
+              <div class="space-y-4 text-base leading-7 text-white sm:text-lg sm:leading-8">
+                <p>
+                  Sales teams now sell too many products, each requiring deep domain knowledge. Specialists cannot attend every call.
+                </p>
+                <p>
+                  Training and onboarding cycles cannot keep pace with product expansion and market speed.
+                </p>
+                <p>
+                  Execution quality varies heavily based on individual rep experience — and that inconsistency costs deals.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         WHY NOW SECTION
+         ======================================== -->
+    <section id="why-now" class="bg-white py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+          <!-- Section Header -->
+          <div class="mx-auto max-w-2xl text-center mb-16 sm:mb-20">
+            <h2 class="font-display text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Why Now
+            </h2>
+            <p class="mt-6 text-lg leading-7 text-slate-700">
+              Markets now move at a pace we've never seen before — what sales teams once had years to adjust to now happens in real time.
+            </p>
+          </div>
+
+          <!-- Cards Container -->
+          <div class="mx-auto max-w-5xl">
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+
+              <!-- Card 1: There Is No Product-Market Fit -->
+              <div class="relative flex flex-col bg-slate-50 rounded-2xl p-8 shadow-lg border border-slate-200 transition-all hover:border-slate-300">
+                <div class="flex justify-center mb-8">
+                  <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-slate-100 ring-2 ring-slate-200">
+                    <!-- Arrow Path Icon -->
+                    <svg class="h-10 w-10 text-slate-700" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-display text-lg font-semibold text-slate-900 text-center mb-6 leading-tight">
+                  There Is No Product-Market Fit
+                </h3>
+                <div class="flex-1 space-y-5">
+                  <p class="text-base leading-7 text-slate-700 lg:text-sm lg:leading-6">
+                    Product-market fit isn't something you achieve — it's something you defend.
+                  </p>
+                  <p class="text-base leading-7 text-slate-700 lg:text-sm lg:leading-6">
+                    Markets shift. Buyers adapt. Yesterday's message stops working faster than ever.
+                  </p>
+                </div>
               </div>
 
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-blue-500">●</span>
-                <span class="flex-1">Generating live transcript</span>
-                <span class="text-xs text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full">ACTIVE</span>
+              <!-- Card 2: AI Changed Where the Advantage Lives -->
+              <div class="relative flex flex-col bg-slate-50 rounded-2xl p-8 shadow-lg border border-slate-200 transition-all hover:border-slate-300">
+                <div class="flex justify-center mb-8">
+                  <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-slate-100 ring-2 ring-slate-200">
+                    <!-- Cube Transparent Icon -->
+                    <svg class="h-10 w-10 text-slate-700" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="font-display text-lg font-semibold text-slate-900 text-center mb-6 leading-tight">
+                  AI Changed Where the Advantage Lives
+                </h3>
+                <div class="flex-1 space-y-5">
+                  <p class="text-base leading-7 text-slate-700 lg:text-sm lg:leading-6">
+                    AI notetakers, summaries, and copilots are table stakes — everyone has them.
+                  </p>
+                  <p class="text-base leading-7 text-slate-700 lg:text-sm lg:leading-6">
+                    What separates teams now is execution at scale — turning what works in one sales motion into leverage across every product, every business line, and every selling team.
+                  </p>
+                  <p class="text-base leading-7 text-slate-700 lg:text-sm lg:leading-6">
+                    When insight stays siloed, teams fall behind. When learning compounds across the org in real time, sales keeps pace with market expectations.
+                  </p>
+                </div>
               </div>
 
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-cyan-500">●</span>
-                <span class="flex-1">First Meeting Deck detected</span>
-                <span class="text-xs text-cyan-600 bg-cyan-50 px-1.5 py-0.5 rounded-full">ANALYZED</span>
-              </div>
-
-              <!-- Critical alert with compact enhanced styling -->
-              <div class="flex items-center space-x-2 py-1.5 px-2 bg-red-50 border-l-3 border-red-500 rounded-r-lg my-1">
-                <span class="text-red-500 animate-pulse">⚠</span>
-                <span class="text-gray-700 font-medium flex-1">
-                  <span class="text-red-600 font-bold">Objection detected</span> → Generating response
-                </span>
-                <span class="text-xs text-red-600 bg-red-100 px-1.5 py-0.5 rounded-full font-semibold">URGENT</span>
-              </div>
-
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-orange-500">●</span>
-                <span class="flex-1">Pain point tagged</span>
-                <span class="text-xs text-orange-600 bg-orange-50 px-1.5 py-0.5 rounded-full">TAGGED</span>
-              </div>
-
-              <!-- Strategic insight with compact enhanced styling -->
-              <div class="flex items-center space-x-2 py-1.5 px-2 bg-yellow-50 border-l-3 border-yellow-500 rounded-r-lg my-1">
-                <span class="text-yellow-600">💡</span>
-                <span class="text-gray-700 flex-1">
-                  <span class="text-yellow-700 font-semibold">Suggesting pivot to adjacent platform capability</span>
-                </span>
-                <span class="text-xs text-yellow-700 bg-yellow-100 px-1.5 py-0.5 rounded-full font-semibold">STRATEGIC</span>
-              </div>
-
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-purple-500">●</span>
-                <span class="flex-1">Generating "The 3 Why's"</span>
-                <span class="text-xs text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded-full">GENERATED</span>
-              </div>
-
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-indigo-500">●</span>
-                <span class="flex-1">SE demo detected</span>
-                <span class="text-xs text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded-full">DETECTED</span>
-              </div>
-
-              <div class="flex items-center space-x-2 text-gray-600 py-0.5">
-                <span class="text-teal-500">●</span>
-                <span class="flex-1">Based on customer cues, prompting AE to steer SE direction</span>
-                <span class="text-xs text-teal-600 bg-teal-50 px-1.5 py-0.5 rounded-full">GUIDED</span>
-              </div>
-
-              <!-- Advanced AI capability with compact enhanced styling -->
-              <div class="flex items-center space-x-2 py-1.5 px-2 bg-yellow-50 border-l-3 border-yellow-500 rounded-r-lg my-1">
-                <span class="text-yellow-600">🔍</span>
-                <span class="text-gray-700 flex-1">
-                  <span class="text-yellow-700 font-semibold">Novel technical objection flagged — using agentic search of the entire codebase to determine response</span>
-                </span>
-                <span class="text-xs text-yellow-700 bg-yellow-100 px-1.5 py-0.5 rounded-full font-semibold">AI SEARCH</span>
-              </div>
-
-              <!-- Completion status with compact success styling -->
-              <div class="flex items-center space-x-2 py-1.5 px-2 bg-emerald-50 border-l-3 border-emerald-500 rounded-r-lg mt-2">
-                <span class="text-emerald-500">✓</span>
-                <span class="text-gray-700 font-medium flex-1">Call complete — updating MEDDPICC in Salesforce and posting summary to Slack</span>
-                <span class="text-xs text-emerald-600 bg-emerald-100 px-1.5 py-0.5 rounded-full font-semibold">COMPLETE</span>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <script>
-      // Content data for different sections
-      const contentData = {
-        home: {
-          header: "Accelerate Your Sales S-Curve with Real-Time, Agentic AI",
-          description: "Curve Shift is a real-time, agentic AI designed to accelerate your Sales S-Curve and drive sustainable revenue growth — not through post-call analysis, but by influencing outcomes while they're still unfolding. And when the conversation ends, Curve Shift automates the tedious follow-up and admin work that slows teams down — so AEs and SEs can focus on selling, not systems."
-        },
-        whoWeAre: {
-          header: "We Didn’t Follow the Sales Playbook — We Rewrote It.",
-          description: [
-            "Curve Shift wasn't founded by outsiders guessing at sales problems — it was built by the team that led GTM innovation inside one of the world's leading cybersecurity companies. As founding members of a skunkworks-style product, sales, and strategy group, we launched new lines of business, ran complex sales motions, and lived the daily friction between ambition and execution.",
-            "We didn't just watch AI emerge — we applied it firsthand. We saw how real-time intelligence could radically accelerate the Sales S-Curve. But we also saw where the current tools failed: too reactive, too generic, and built for reporting, not real-time performance.",
-            "We're not here to chase the latest AI hype cycle — we're here to build what we wished we had. Curve Shift is the product of lived experience: a purpose-built, agentic AI that understands the flow of live conversations, drives decisive action, and frees AEs and SEs to do their best work — faster, smarter, and at scale."
-          ]
-        }
-      };
+    <!-- ========================================
+         WHY CURVE SHIFT SECTION
+         ======================================== -->
+    <section id="why-curve-shift" class="relative bg-gradient-to-b from-emerald-600 to-emerald-700 py-20 sm:py-32">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="mx-auto max-w-2xl text-center mb-8 sm:mb-10">
+          <h2 class="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
+            Why Curve Shift
+          </h2>
+          <p class="mt-6 text-lg leading-7 text-white sm:text-xl">
+            Because we lived this problem ourselves — and no existing solution solved it.
+          </p>
+        </div>
 
-      // Get DOM elements
-      const whoWeAreLink = document.getElementById('who-we-are-link');
-      const whatsComingBtn = document.getElementById('whats-coming-btn');
-      const mainHeader = document.getElementById('main-header');
-      const mainDescription = document.getElementById('main-description');
+        <!-- Pull Quote (Editorial Style - No Background Box) -->
+        <div class="mx-auto max-w-3xl pt-4 pb-12 sm:pt-6 sm:pb-16">
+          <div class="border-t border-white/20 pt-12 pb-12 border-b">
+            <p class="text-center text-3xl font-medium text-white/95 leading-relaxed tracking-tight sm:text-4xl">
+              "We built the product we wished existed."
+            </p>
+          </div>
+        </div>
 
-      // Track current state
-      let currentView = 'home';
+        <!-- Content Cards with Icons -->
+        <div class="space-y-8 sm:space-y-10">
 
-      // CSS class definitions for styling swap
-      const buttonClasses = 'bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white px-4 py-2 sm:px-3 sm:py-1.5 rounded-full text-sm font-medium transition-colors min-h-[44px] sm:min-h-0 flex items-center justify-center';
-      const linkClasses = 'text-gray-500 hover:text-emerald-500 active:text-emerald-600 text-sm font-medium transition-colors py-2 sm:py-0 min-h-[44px] sm:min-h-0 flex items-center';
+          <!-- Card 1: Built from Field Experience -->
+          <div class="relative rounded-2xl bg-white/5 backdrop-blur-sm p-8 shadow-xl ring-1 ring-white/10">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
+                  <!-- LightBulb Icon -->
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-semibold text-white mb-4 sm:text-2xl">
+                  Built from Field Experience
+                </h3>
+                <div class="space-y-4 text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+                  <p>
+                    We didn't study sales from the outside — we ran it. As founding members of a skunkworks-style GTM team inside a leading cybersecurity company, we launched new business lines, navigated complex enterprise sales motions, and lived the daily friction between ambition and execution.
+                  </p>
+                  <p>
+                    We saw firsthand how insights get lost, how expertise doesn't scale, and how the best reps carry knowledge that never makes it to the rest of the team.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      // Function to swap navigation styling
-      function swapNavigationStyling(activeSection) {
-        if (activeSection === 'whoWeAre') {
-          // Make "Who we are" the active button, "What's coming" the link
-          whoWeAreLink.className = buttonClasses;
-          whoWeAreLink.innerHTML = 'Who we are';
+          <!-- Card 2: Why Existing Tools Failed -->
+          <div class="relative rounded-2xl bg-white/5 backdrop-blur-sm p-8 shadow-xl ring-1 ring-white/10">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
+                  <!-- ExclamationTriangle Icon -->
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-semibold text-white mb-4 sm:text-2xl">
+                  Why Existing Tools Failed
+                </h3>
+                <div class="space-y-4 text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+                  <p>
+                    We tried the AI notetakers, the conversation intelligence platforms, the copilots. They all had the same problem: they were built for analysis, not action.
+                  </p>
+                  <p>
+                    Post-call summaries don't change outcomes. Generic prompts don't capture your best rep's instincts. And tools that treat every company the same can't deliver the edge you need.
+                  </p>
+                  <p>
+                    We needed something that understood our business, learned from our wins, and influenced conversations in real time — not after the fact.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          whatsComingBtn.className = linkClasses;
-          whatsComingBtn.innerHTML = '← What\'s coming';
-        } else {
-          // Make "What's coming" the active button, "Who we are" the link
-          whatsComingBtn.className = buttonClasses;
-          whatsComingBtn.innerHTML = 'What\'s coming';
+          <!-- Card 3: What Curve Shift Delivers -->
+          <div class="relative rounded-2xl bg-white/5 backdrop-blur-sm p-8 shadow-xl ring-1 ring-white/10">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10">
+                  <!-- Bolt Icon -->
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-display text-xl font-semibold text-white mb-4 sm:text-2xl">
+                  What Curve Shift Delivers
+                </h3>
+                <div class="space-y-4 text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+                  <p>
+                    Curve Shift is purpose-built, agentic AI that understands the flow of live conversations, learns from your best performers, and scales that expertise across every call — in real time.
+                  </p>
+                  <p>
+                    It doesn't just take notes. It drives action. It surfaces the right insight at the right moment, helps reps navigate objections with confidence, and ensures every conversation benefits from the collective intelligence of your entire sales org.
+                  </p>
+                  <p>
+                    And when the call ends, it handles the follow-up and admin work automatically — so your team can focus on selling, not systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          whoWeAreLink.className = linkClasses;
-          whoWeAreLink.innerHTML = 'Who we are →';
-        }
-      }
+        </div>
 
-      // Function to update content with smooth transition
-      function updateContent(contentKey) {
-        const content = contentData[contentKey];
-        if (!content) return;
+        <!-- Closing Statement -->
+        <div class="mt-16 sm:mt-20">
+          <p class="text-center text-2xl font-semibold text-white sm:text-3xl">
+            Like having your best expert on every call.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        // Add fade-out effect
-        mainHeader.style.opacity = '0.5';
-        mainDescription.style.opacity = '0.5';
+  </main>
 
-        // Update content after brief delay for smooth transition
-        setTimeout(() => {
-          mainHeader.textContent = content.header;
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="border-t border-slate-900/10 py-10 text-center">
+        <p class="text-sm text-slate-500">
+          Copyright &copy; <span id="current-year"></span> Curve Shift AI. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-          // Handle description - check if it's an array (multiple paragraphs) or string (single paragraph)
-          if (Array.isArray(content.description)) {
-            // Clear existing content
-            mainDescription.innerHTML = '';
+  <!-- ========================================
+       JAVASCRIPT
+       ======================================== -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // Create separate paragraph elements for better spacing
-            content.description.forEach((paragraph, index) => {
-              const p = document.createElement('p');
-              p.className = 'mb-4 last:mb-0'; // Add margin bottom except for last paragraph
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
 
-              // Check if this is the third paragraph (index 2) and contains the quote to highlight
-              if (index === 2 && paragraph.includes("We're not here to chase the latest AI hype cycle — we're here to build what we wished we had.")) {
-                // Split the paragraph around the quote
-                const quote = "We're not here to chase the latest AI hype cycle — we're here to build what we wished we had.";
-                const parts = paragraph.split(quote);
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIconOpen.classList.toggle('scale-90');
+      menuIconOpen.classList.toggle('opacity-0');
+      menuIconClose.classList.toggle('scale-90');
+      menuIconClose.classList.toggle('opacity-0');
+    });
 
-                // Add the text before the quote
-                if (parts[0]) {
-                  const beforeText = document.createTextNode(parts[0]);
-                  p.appendChild(beforeText);
-                }
-
-                // Create and style the highlighted quote
-                const highlightedQuote = document.createElement('span');
-                highlightedQuote.textContent = quote;
-                highlightedQuote.className = 'block text-xl font-bold text-emerald-600 my-3 leading-relaxed';
-                p.appendChild(highlightedQuote);
-
-                // Add the text after the quote
-                if (parts[1]) {
-                  const afterText = document.createTextNode(parts[1]);
-                  p.appendChild(afterText);
-                }
-              } else {
-                // Regular paragraph without highlighting
-                p.textContent = paragraph;
-              }
-
-              mainDescription.appendChild(p);
-            });
-          } else {
-            // Single paragraph (for home content)
-            mainDescription.textContent = content.description;
-          }
-
-          // Fade back in
-          mainHeader.style.opacity = '1';
-          mainDescription.style.opacity = '1';
-
-          // Update navigation styling
-          swapNavigationStyling(contentKey);
-
-          currentView = contentKey;
-        }, 150);
-      }
-
-      // Add click event listener to "Who we are" link
-      whoWeAreLink.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default link behavior
-
-        if (currentView === 'home') {
-          updateContent('whoWeAre');
-        } else {
-          updateContent('home');
-        }
+    // Close mobile menu when clicking links
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('scale-90', 'opacity-0');
+        menuIconClose.classList.add('scale-90', 'opacity-0');
       });
-
-      // Add click event listener to "What's coming" button/link
-      whatsComingBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default behavior
-
-        if (currentView === 'whoWeAre') {
-          updateContent('home');
-        }
-        // If already on home, do nothing (or could add future functionality)
-      });
-
-      // Add smooth transition styles
-      mainHeader.style.transition = 'opacity 0.3s ease-in-out';
-      mainDescription.style.transition = 'opacity 0.3s ease-in-out';
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
