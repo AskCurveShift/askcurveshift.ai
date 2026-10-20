@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy — Steady</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><a href="./">Steady</a></header>
+  <main>
+    <p class="eyebrow">Privacy</p>
+    <h1>Steady privacy policy</h1>
+    <p class="updated">Effective October 20, 2026</p>
+    <p>Steady is an iPhone training app. This policy explains how its optional Google connection handles Gmail data, as well as related training and coaching data.</p>
+
+    <h2>Google account and Gmail access</h2>
+    <p>When you tap Continue with Google and approve Google's consent screen, Steady requests the <code>gmail.readonly</code> permission. That permission can read your Gmail mailbox. Steady uses it only to search recent mail for Lose It! Daily Report messages and read matching messages so it can import your nutrition report. Steady does not send, modify, mark as read, or delete email.</p>
+    <p>Steady uses your Google account email address to show which account is connected. Google OAuth credentials are retained by the Google Sign-In SDK in iOS Keychain. Steady calls the Gmail API directly from your iPhone over HTTPS. It does not store complete email messages or attachments.</p>
+
+    <h2>Imported reports</h2>
+    <p>Steady saves parsed report details—such as report date, meals, food names, calories, and nutrient totals—in its protected app storage on your iPhone. It uses these records to display nutrition progress and provide coaching context. The original messages stay in Gmail.</p>
+    <p>Steady also stores training records and any Apple Health or provider information you choose to connect locally on your iPhone. Apple Health and provider permissions are requested separately.</p>
+
+    <h2>AI coaching and sharing</h2>
+    <p>Gmail messages themselves are not sent to an AI service. If you turn on AI coaching sharing, Steady may send summarized nutrition and training records to the coaching service you configured when you request a review or chat. Food names and missing-nutrient flags are included only if you separately enable “Share Lose It! food names with AI coach.” The chosen service processes those requests under its own terms and privacy policy. Steady does not use Gmail data for advertising, sale, or training a general-purpose AI model.</p>
+
+    <h2>Your controls and deletion</h2>
+    <p>In Steady, open Settings → Nutrition &amp; Weight. Use Disconnect Google to revoke the app's Google grant and stop Gmail import. Use Delete Imported Reports to remove parsed Lose It! records from this iPhone. Disconnect before deleting if you do not want them imported again. These controls do not delete messages in Gmail, exported files you made, or coaching responses already saved in Steady. You can also revoke Steady's access from your Google Account's third-party connections page.</p>
+
+    <h2>Limited use and security</h2>
+    <p>Steady's use of information received from Google Workspace APIs follows the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace API User Data and Developer Policy</a>, including its Limited Use requirements. Steady limits Gmail access to the user-facing report-import feature, protects local records with iOS file protection, and stores Google credentials in Keychain.</p>
+
+    <h2>Contact and changes</h2>
+    <p>For questions or data requests, contact <a href="mailto:drew@askcurveshift.ai">drew@askcurveshift.ai</a>. If Steady's use of Google data changes, this policy and the in-app disclosure will be updated before the new use begins.</p>
+  </main>
+  <footer><a href="./">Steady home</a><span>© 2026 Steady</span></footer>
+</body>
+</html>
