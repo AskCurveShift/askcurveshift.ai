@@ -41,12 +41,15 @@ button:focus-visible {
   background: #dfdfdf;
   color: var(--ink);
 }
-h1,
-h2,
-h3,
-p,
-figure {
-  margin: 0;
+/* Keep element defaults below component styles so article spacing survives. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  p,
+  figure {
+    margin: 0;
+  }
 }
 h1,
 h2,
