@@ -1,0 +1,90 @@
+export const article = {
+  "title": "A new way to modify AI could give threat actors an edge",
+  "description": "New research lets one AI edit another model without retraining. Could threat actors use it to improve cyber capabilities as well as weaken safeguards?",
+  "date": "2026-11-04",
+  "topic": "AI & cyber security",
+  "readingTime": 7
+}
+
+AI models learn from examples through training, a process that can demand substantial computing resources. Meta, the company behind Facebook and Instagram, reported 30.84 million hours of specialized computing-chip time to train one of its large AI models, accumulated across chips running in parallel. Stanford’s 2025 AI Index estimated the training compute for that model at approximately $170 million, using cloud rental prices.
+
+Improvements to an existing model may no longer need another training run. New research shows that targeted changes can start with a plain-language request to another AI. A simplified version of the researchers’ request was: "Make this model better at math by changing its learned settings, without retraining it." Using tools supplied by the researchers, the AI inspected and edited the learned settings of an open-weight model, then tested the results. It changed just 0.016% of those settings, raising the open-weight model’s math-test score from 7.9% to 48.1% without retraining.
+
+The cyber security question is whether threat actors could use similar edits to improve the AI behind their offensive tools.
+
+## How open-weight models are used today
+
+Open-source software gives people access to the code so they can inspect, modify, and share it. Open-weight models bring a similar idea to AI: the settings a model learned during training, called weights, are available to download. With suitable hardware, people can run the model on their own systems and modify it within its license terms.
+
+That access also makes it possible to weaken safeguards intended to stop harmful requests. Anthropic tested this with GLM-5.3, an open-weight model from Z.ai. In the simulated test, it initially refused every direct malicious request. Under different test conditions, that fell all the way to no refusals.
+
+<SafeguardRefusalChart />
+
+Anthropic estimated that an experienced team could remove those safeguards for just $1,200 in computing costs. Its own research run cost roughly $4,400.
+
+The risk comes from pairing that low cost with a model that can already build working exploits.
+
+<ExploitSuccessChart />
+
+That brings us back to the opening question: could threat actors use an advanced AI model such as Claude Mythos Preview to improve GLM-5.3’s ability to build working exploits? That specific pairing has not been demonstrated. The new research tested a related idea, using OpenAI’s GPT-6 Astra to improve an open-weight model’s math performance by editing its learned settings.
+
+## How an advanced AI could improve an open-weight model
+
+The researchers asked GPT-6 Astra to improve the math performance of Qwen3.5-0.8B, an open-weight model. The assignment was to test it on practice problems, investigate the causes of its failures, and repair the model by editing its weights. The instructions suggested repeated reasoning as a possible problem. Astra’s first tests confirmed that repetition was the main failure in the sample, so it investigated the cause and worked on a repair.
+
+### What weight-space programming changes
+
+The authors call this approach weight-space programming. An AI takes a plain-language goal and turns it into direct changes to another model’s weights, the learned numerical settings that shape its behavior. It reasons about what those settings do, identifies a change that could help, and writes code to apply it to a copy of the model.
+
+Conventional training adjusts weights through repeated calculations over examples. The researchers prohibited further training, so Astra had to investigate a specific failure and write a repair directly. The workflow resembles debugging and patching: reproduce the failure, isolate the cause, change the affected internals, and test again.
+
+### How the researchers set up the experiment
+
+Astra worked through an offline Python workspace where it could inspect the original weights and save proposed changes separately. A controlled testing tool let it run the original or edited model on practice problems and inspect the results.
+
+### Reproduce the failure
+
+In the test environment, Astra found that Qwen3.5-0.8B repeatedly got stuck on the practice math problems. Of 96 practice answers, 85 hit the response-length limit. The outputs showed it repeating its reasoning without reaching a final answer, confirming the problem suggested in the instructions.
+
+GPT-6 Astra could inspect Qwen3.5-0.8B’s answers and record its internal activity. To investigate the repetition, it supplied two versions of the reasoning for the same math problem: one that moved toward an answer and one that kept repeating itself. Comparing the open-weight model’s activity as it processed those passages helped Astra identify parts that might be driving the repetition. It then changed those parts and tested the effects to check whether they caused the problem.
+
+### Isolate the cause and make a narrow edit
+
+The final repair targeted two of the model’s 24 processing layers, numbered 15 and 19. Astra identified a numerical signal associated with repetition in their outputs and reduced that signal through a direct weight edit.
+
+The patch targeted 131,072 weight values, about 0.016% of the model. To check whether the suspected mechanism affected the failure, Astra varied the strength of the edit and tested the layers individually. It also compared the targeted edit with a random change of similar size.
+
+### Compare the patched model with the original
+
+Astra tested the proposed repair by running the original and edited versions of Qwen3.5-0.8B on the same practice questions under matched conditions. It checked whether the edited version could finish more math problems correctly.
+
+After Astra submitted its final edit, the researchers tested both versions on a different set of questions that Astra had not been allowed to inspect during the experiment. This checked whether the repair helped beyond the examples used to develop it, similar to testing a detection rule against cases you did not use when writing it.
+
+On MATH-500, the math test used in the opening, the share of answers cut off at the length limit fell from 93% to 33%. The repair let the model finish more answers it could already work out.
+
+For a threat actor, the comparable opportunity would be repairing a recurring failure in a model that already has useful cyber capabilities.
+
+## Could targeted edits close the gap with frontier AI?
+
+Frontier AI means the most advanced models available, whether their weights are kept private or made available to download. The earlier exploit-building comparison shows how close an open-weight model can come on a specific task: GLM-5.3 performed nearly as well as Claude Mythos Preview. That comparison alone does not establish equivalent performance across cyber security work.
+
+The weight-space programming experiments, published on November 2, 2026, showed that an AI could improve an open-weight model’s math performance through targeted weight edits, without retraining. That raises the possibility of narrowing performance gaps on other tasks, although cyber security improvements remain untested.
+
+A convincing result would compare an edited model with its original version on cyber tasks under the same conditions, including problems that were not used to develop the edit. Independent testing would need to confirm the gains and check for damage to other capabilities. The time and computing resources needed to develop the edit would also matter, including fees paid to use the editing AI.
+
+## What this could mean for the threat landscape
+
+Anthropic showed that safeguards could be weakened in a model with demonstrated offensive capabilities. If targeted edits also prove effective on cyber tasks, threat actors could use another AI to improve functions such as vulnerability analysis, code generation, and troubleshooting across their offensive tools. Repeated successful edits could keep bringing those functions closer to frontier performance as actors adapt the open-weight model to their operations.
+
+If those improvements prove affordable and repeatable, threat actors could start with a model someone else spent heavily to train and focus their resources on adapting it, without paying for another large training run. The result could be specialized offensive AI under their control, with weakened safeguards and better performance on the tasks they care about, built on a training investment they never had to make.
+
+## References
+
+- Meta. [Llama 3.1 405B model card](https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct). Training hardware and cumulative computing-chip hours.
+- Stanford HAI. [AI Index Report 2025, chapter 1](https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf), page 43. Cloud-rental-based training cost estimate for Llama 3.1 405B.
+- Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [Sparks of Weight-Space Programming](https://rikiyat.github.io/blog/weight-space-programming/), November 2, 2026. Direct model editing, the math improvement, and experimental limitations.
+- Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [Experiment 8 setup, logs, and evaluation records](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp8_math/README.md). Tool access, testing budgets, diagnosis, weight edits, controls, and held-out evaluation.
+- Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [Initial instructions for the 50-pass math experiment](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp8_math/runs/p50c/turns/t001/prompt.txt). Researchers’ diagnostic guidance, including repetition as a possible failure.
+- Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. [Diagnostic comparisons and intervention history](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp8_math/runs/p50c/work_notes/experiment_history.md). Matched productive/repetitive passages, internal measurements, and tests of candidate causes.
+- Anthropic Frontier Red Team. [GLM-5.3 and the spread of advanced cyber capabilities](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities), September 29, 2026. ExploitBench results, computing costs and estimated costs of safeguard removal, refusal rates, capability retention, and simulated malicious-request tests; a rival lab’s evaluation.
+- Open Source Initiative. [The Open Source AI Definition](https://opensource.org/ai/open-source-ai-definition), version 1.0. Requirements for open-source AI beyond access to model weights.

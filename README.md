@@ -25,7 +25,7 @@ The existing Steady homepage and privacy policy are retained in `public/steady/`
 
 The homepage and `/blog/` list published articles from `src/app/blog/<slug>/page.mdx`. Use `content/article-template.mdx` for the title, description, date, topic, reading time, and article content. The shared layout and build provide article metadata and social images.
 
-There are no published posts yet. Unpublished drafts, research, private briefs, and development preview routes stay in the separate local authoring project and are excluded from this public repository. Complete that project's editorial and publication checks before adding a finished article here. The public site currently shows the first-posts-coming-soon state.
+The first article, “A new way to modify AI could give threat actors an edge,” was published November 4, 2026 at `/blog/open-weight-models/`. Unpublished drafts, research, private briefs, and development preview routes stay in the separate local authoring project and are excluded from this public repository. Complete that project's editorial and publication checks before adding a finished article here.
 
 No analytics, newsletter, or contact-form backend is configured.
 
