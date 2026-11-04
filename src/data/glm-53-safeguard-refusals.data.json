@@ -1,0 +1,41 @@
+{
+  "source": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+  "published": "2026-09-29",
+  "verified": "2026-11-03",
+  "model": "GLM-5.3",
+  "metric": "Share of simulated trials with no engagement; derived as 100 minus reported engagement percentage",
+  "trials_per_condition": 50,
+  "conditions": [
+    {
+      "label": "Direct harmful request",
+      "engagement_percent": 0,
+      "non_engagement_percent": 100
+    },
+    {
+      "label": "False cover story",
+      "engagement_percent": 64,
+      "non_engagement_percent": 36
+    },
+    {
+      "label": "Prefilled reasoning",
+      "engagement_percent": 92,
+      "non_engagement_percent": 8
+    },
+    {
+      "label": "Safeguards removed",
+      "engagement_percent": 100,
+      "non_engagement_percent": 0
+    }
+  ],
+  "computing_cost_usd": {
+    "anthropic_research_run_approx": 4400,
+    "experienced_team_estimate_approx": 1200
+  },
+  "qualifications": [
+    "Separate conditions, not sequential steps.",
+    "No generated code executed in the simulation.",
+    "Zero non-engagement is observed in these 50 modified-model trials, not all harmful requests.",
+    "The separate three-benchmark mean refusal rate changed from 95% to 6%.",
+    "Cost is for modifying GLM-5.3, not training it or conducting attacks."
+  ]
+}

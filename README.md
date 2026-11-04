@@ -1,67 +1,34 @@
-# Curve Shift — Coming Soon
+# Curve Shift
 
-A clean, minimal "coming soon" page for Curve Shift - a real-time AI assistant for sales teams.
+An independent blog by Drew Russell on cybersecurity, AI, technical sales, and startup growth. Built with Next.js, Tailwind CSS, and MDX from the owner's licensed Tailwind Plus Studio template.
 
-## 🚀 Quick Start
+## Development
 
-This is a static HTML website ready for deployment on Netlify.
+- Install dependencies: `npm ci` (Node.js 22).
+- Start the local site: `npm run dev`.
+- Check TypeScript: `npm run typecheck`.
+- Build the production site: `npm run build`.
 
-### Local Development
+The build exports static HTML, CSS, JavaScript, metadata, and social images to `out/`. It requires no application server.
 
-1. Clone this repository
-2. Open `index.html` in your browser or use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
+## Deployment
 
-   # Using Node.js
-   npx serve .
-   ```
+The production site is https://askcurveshift.ai. Netlify's existing GitHub integration publishes pushes to `main` in `AskCurveShift/askcurveshift.ai`.
 
-### 🌐 Deploy to Netlify
+`netlify.toml` sets Node.js 22, runs `npm run build`, and publishes `out/`. The Next.js server adapter is skipped because this project uses `output: 'export'`. Existing security headers are retained.
 
-#### Option 1: Drag & Drop (Easiest)
-1. Go to [netlify.com](https://netlify.com)
-2. Drag and drop your project folder to the deploy area
-3. Your site will be live instantly!
+`src/lib/site.ts` holds the production domain, site description, and LinkedIn profile. The public domain enables indexing and supplies canonical URLs, sitemap entries, RSS links, and social metadata.
 
-#### Option 2: Git Integration (Recommended)
-1. Push this code to a GitHub repository
-2. Connect your GitHub account to Netlify
-3. Select this repository for deployment
-4. Netlify will automatically deploy on every push
+The existing Steady homepage and privacy policy are retained in `public/steady/`, at `/steady/` and `/steady/privacy.html`.
 
-#### Option 3: Netlify CLI
-```bash
-# Install Netlify CLI
-npm install -g netlify-cli
+## Articles
 
-# Deploy
-netlify deploy
+The homepage and `/blog/` list published articles from `src/app/blog/<slug>/page.mdx`. Use `content/article-template.mdx` for the title, description, date, topic, reading time, and article content. The shared layout and build provide article metadata and social images.
 
-# Deploy to production
-netlify deploy --prod
-```
+There are no published posts yet. Unpublished drafts, research, private briefs, and development preview routes stay in the separate local authoring project and are excluded from this public repository. Complete that project's editorial and publication checks before adding a finished article here. The public site currently shows the first-posts-coming-soon state.
 
-## 📁 Project Structure
+No analytics, newsletter, or contact-form backend is configured.
 
-```
-askcurveshift.ai/
-├── index.html          # Main webpage (uses Tailwind CSS)
-├── netlify.toml        # Netlify configuration
-└── README.md           # This file
-```
+## License
 
-## 🎨 Customization
-
-- Edit `index.html` to modify content and styling
-- Modify `netlify.toml` for deployment settings
-- Styling is handled by Tailwind CSS classes in the HTML
-
-## ✨ Features
-
-- Clean, minimal design
-- Responsive layout
-- Email signup form
-- Tailwind CSS for styling
-- Ready for Netlify deployment
+The site uses the owner's commercial Tailwind Plus license: https://tailwindcss.com/plus/license. Template-derived source and assets retain their original licensing restrictions; public repository access does not grant redistribution rights.
