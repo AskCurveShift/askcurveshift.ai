@@ -18,7 +18,7 @@ export async function BlogIndex() {
         </h1>
         <p className="page-lead">
           An independent perspective on cybersecurity, AI, technical sales, and
-          the decisions that shape how startups grow.
+          the decisions that shape how businesses grow.
         </p>
         <div className="topic-strip" aria-label="Writing topics">
           <span>Cybersecurity</span>
