@@ -1,97 +1,89 @@
 'use client'
+
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
-import { Arrow, Brand } from '@/components/Elements'
-const links = [
-  { href: '/', label: 'Blog' },
-  { href: '/about/', label: 'About' },
-]
-export function SiteHeader() {
-  const pathname = usePathname()
-  const [open, setOpen] = useState(false)
-  const toggle = useRef<HTMLButtonElement>(null)
-  useEffect(() => {
-    function close(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpen(false)
-        toggle.current?.focus()
-      }
-    }
-    document.addEventListener('keydown', close)
-    return () => document.removeEventListener('keydown', close)
-  }, [])
+import clsx from 'clsx'
+import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
+
+function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <header className="site-header">
-      <div className="shell header-inner">
-        <Link
-          href="/"
-          aria-label="Curve Shift, home"
-          onClick={() => setOpen(false)}
-        >
-          <Brand />
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path d="m5.636 4.223 14.142 14.142-1.414 1.414L4.222 5.637z" />
+      <path d="M4.222 18.363 18.364 4.22l1.414 1.414L5.636 19.777z" />
+    </svg>
+  )
+}
+
+function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path d="M2 6h20v2H2zM2 16h20v2H2z" />
+    </svg>
+  )
+}
+
+export function SiteHeader({
+  panelId,
+  expanded,
+  onToggle,
+  toggleRef,
+  invert = false,
+}: {
+  panelId: string
+  expanded: boolean
+  onToggle: () => void
+  toggleRef: React.RefObject<HTMLButtonElement | null>
+  invert?: boolean
+}) {
+  const Icon = expanded ? XIcon : MenuIcon
+  return (
+    <Container>
+      <div
+        className={clsx(
+          'studio-header flex items-center justify-between',
+          invert && 'studio-header-invert',
+        )}
+      >
+        <Link href="/" aria-label="Curve Shift, home">
+          <img
+            src={
+              invert
+                ? '/brand/curve-shift-reversed.svg'
+                : '/brand/curve-shift.svg'
+            }
+            width="337"
+            height="64"
+            alt="Curve Shift"
+            className="studio-wordmark"
+          />
         </Link>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={
-                (link.href === '/' &&
-                  (pathname === '/' || pathname.startsWith('/blog'))) ||
-                pathname.replace(/\/$/, '') === link.href.replace(/\/$/, '')
-                  ? 'page'
-                  : undefined
-              }
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <a href="/feed.xml" className="header-feed">
-          RSS feed
-          <Arrow diagonal />
-        </a>
-        <button
-          ref={toggle}
-          className="menu-toggle"
-          aria-label={open ? 'Close navigation' : 'Open navigation'}
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-          onClick={() => setOpen(!open)}
-        >
-          <span>{open ? 'Close' : 'Menu'}</span>
-          <span
-            className={open ? 'menu-glyph is-open' : 'menu-glyph'}
-            aria-hidden="true"
-          >
-            <i />
-            <i />
-          </span>
-        </button>
-      </div>
-      {open && (
-        <nav
-          id="mobile-navigation"
-          className="mobile-nav shell"
-          aria-label="Mobile navigation"
-        >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-              <Arrow />
-            </Link>
-          ))}
-          <a href="/feed.xml">
+        <div className="flex items-center gap-x-8">
+          <Button className="studio-feed" href="/feed.xml" invert={invert}>
             RSS feed
-            <Arrow />
-          </a>
-        </nav>
-      )}
-    </header>
+          </Button>
+          <button
+            ref={toggleRef}
+            type="button"
+            onClick={onToggle}
+            aria-expanded={expanded ? 'true' : 'false'}
+            aria-controls={panelId}
+            className={clsx(
+              'studio-toggle group -m-2.5 rounded-full p-2.5 transition',
+              invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
+            )}
+            aria-label={expanded ? 'Close navigation' : 'Open navigation'}
+          >
+            <Icon
+              className={clsx(
+                'h-6 w-6',
+                invert
+                  ? 'fill-white group-hover:fill-neutral-200'
+                  : 'fill-neutral-950 group-hover:fill-neutral-700',
+              )}
+            />
+          </button>
+        </div>
+      </div>
+    </Container>
   )
 }

@@ -3,6 +3,7 @@
 @import './typography.css' layer(components);
 @import './site.css';
 @import './personal-site.css';
+@import './studio-shell.css';
 
 @theme {
   --text-*: initial;

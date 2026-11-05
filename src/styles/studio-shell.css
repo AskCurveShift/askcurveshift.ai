@@ -1,0 +1,59 @@
+/* Header, expanding navigation, and rounded canvas from the Studio template. */
+.studio-layout {
+  position: relative;
+  min-height: 100vh;
+  background: #0a0a0a;
+}
+.studio-page-frame {
+  min-height: calc(100vh - 8px);
+}
+.studio-wordmark {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+.studio-feed {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.studio-header-invert .studio-feed {
+  color: #0a0a0a;
+}
+.studio-toggle {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+.studio-header-invert a:focus-visible,
+.studio-header-invert button:focus-visible,
+.studio-navigation a:focus-visible,
+.studio-menu-footer a:focus-visible {
+  outline-color: #fff;
+}
+.studio-navigation {
+  line-height: 48px;
+}
+.studio-menu-footer {
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+}
+.studio-menu-footer h2 {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.studio-menu-footer p {
+  color: #a3a3a3;
+}
+@media (max-width: 400px) {
+  .studio-wordmark {
+    height: 26px;
+  }
+  .studio-header > div {
+    column-gap: 20px;
+  }
+}

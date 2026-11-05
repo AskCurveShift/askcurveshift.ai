@@ -21,6 +21,10 @@ The production site is https://askcurveshift.ai. Netlify's existing GitHub integ
 
 The existing Steady homepage and privacy policy are retained in `public/steady/`, at `/steady/` and `/steady/privacy.html`.
 
+## Navigation and layout
+
+The site uses the original licensed Studio header, expanding dark navigation panel, and rounded page canvas on the homepage, About, and articles. The menu contains Blog and About; RSS replaces the template's Contact us button. Spotlight informs the About page content layout and recommendation, rather than the shared navigation. Navigation supports Escape, focus return, and inert collapsed content.
+
 ## Articles
 
 The homepage and `/blog/` list published articles from `src/app/blog/<slug>/page.mdx`. Use `content/article-template.mdx` for the title, description, date, topic, reading time, and article content. The shared layout and build provide article metadata and social images.

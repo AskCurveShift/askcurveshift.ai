@@ -1,52 +1,11 @@
-/* Shared Spotlight-inspired frame, navigation, and typography. */
+/* Studio supplies the site frame and navigation; Spotlight informs About content. */
 .personal-site {
-  min-height: 100vh;
-  background: #fafafa;
-  padding-inline: max(0px, calc((100% - 1160px) / 2));
-}
-.personal-site > .site-header,
-.personal-site > main,
-.personal-site > .site-footer {
+  min-width: 0;
   background: #fff;
-  border-inline: 1px solid #f1f1f2;
 }
 .personal-site .shell {
   width: calc(100% - 112px);
   max-width: 1048px;
-}
-.personal-site .site-header {
-  border-bottom: 0;
-}
-.personal-site .header-inner {
-  height: 112px;
-  position: relative;
-}
-.personal-site .brand {
-  width: 154px;
-}
-.personal-site .desktop-nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  gap: 27px;
-  padding: 0 24px;
-  border: 1px solid #eeeef0;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 2px 7px rgb(24 24 27 / 5%);
-  font-size: 13px;
-}
-.personal-site .desktop-nav a {
-  padding-block: 13px;
-  font-weight: 550;
-}
-.personal-site .desktop-nav a[aria-current='page']::after {
-  display: none;
-}
-.personal-site .header-feed {
-  margin-left: auto;
-  color: #71717a;
 }
 .spotlight-about-grid {
   display: grid;
@@ -371,12 +330,6 @@
 @media (max-width: 600px) {
   .personal-site .shell {
     width: calc(100% - 48px);
-  }
-  .personal-site .header-inner {
-    height: 92px;
-  }
-  .personal-site .brand {
-    width: 146px;
   }
   .personal-site .footer-main {
     display: flex;
