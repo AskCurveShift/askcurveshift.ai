@@ -6,3 +6,26 @@
   font-stretch: 75% 125%;
   src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
 }
+
+@layer base {
+  html {
+    background: var(--color-neutral-950);
+    color: var(--color-neutral-950);
+    scroll-padding-top: 2.5rem;
+  }
+  body {
+    margin: 0;
+  }
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 6px;
+  }
+  button {
+    cursor: pointer;
+  }
+}

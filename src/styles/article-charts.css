@@ -1,0 +1,117 @@
+/* Existing article charts, isolated from page styling. */
+.safeguard-chart {
+  margin-block: 2.5rem;
+  padding-block: 2rem;
+  border-block: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.safeguard-chart-header h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.safeguard-chart-header p {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.safeguard-chart-conditions {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.75rem 0;
+  padding: 0;
+  list-style: none;
+}
+.safeguard-chart-condition {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.safeguard-chart-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.safeguard-chart-label span {
+  font-weight: 500;
+}
+.safeguard-chart-label strong {
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.safeguard-chart-condition p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.safeguard-chart-track {
+  height: 10px;
+  margin-top: 0.8rem;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--line);
+}
+.safeguard-chart-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--ink);
+}
+.safeguard-chart-condition-modified {
+  padding: 1rem;
+  background: var(--wash);
+}
+.safeguard-chart-costs h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.safeguard-chart-costs dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.safeguard-chart-costs dl > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.safeguard-chart-costs dt {
+  order: 1;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.safeguard-chart-costs dd {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+.safeguard-chart figcaption {
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.safeguard-chart figcaption p + p {
+  margin-top: 0.2rem;
+}
+.exploit-chart-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}

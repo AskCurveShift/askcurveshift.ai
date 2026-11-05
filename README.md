@@ -23,7 +23,9 @@ The existing Steady homepage and privacy policy are retained in `public/steady/`
 
 ## Navigation and layout
 
-The site uses the original licensed Studio header, expanding dark navigation panel, and rounded page canvas on the homepage, About, and articles. The menu contains Blog and About; RSS replaces the template's Contact us button. Spotlight informs the About page content layout and recommendation, rather than the shared navigation. Navigation supports Escape, focus return, and inert collapsed content.
+Studio is the default theme for the homepage, `/blog/`, article pages, navigation, and footer. The original licensed `PageIntro`, `Container`, `Border`, `Button`, typography, and grid background provide the layout. The menu contains Blog and About; RSS replaces Contact us and the newsletter form.
+
+Spotlight is limited to the About page content. Its styles live in `src/styles/spotlight-about.css` and do not override the blog. Article chart styles are isolated in `src/styles/article-charts.css`. The previous shared custom page styles have been removed. Navigation supports Escape, focus return, and inert collapsed content.
 
 ## Articles
 

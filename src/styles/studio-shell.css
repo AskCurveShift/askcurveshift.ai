@@ -1,4 +1,10 @@
-/* Header, expanding navigation, and rounded canvas from the Studio template. */
+:root {
+  --ink: #171717;
+  --muted: #666666;
+  --line: #e5e5e5;
+  --wash: #f6f6f6;
+}
+/* Studio is the default; page components use its original Tailwind styles. */
 .studio-layout {
   position: relative;
   min-height: 100vh;
@@ -55,5 +61,23 @@
   }
   .studio-header > div {
     column-gap: 20px;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: -100px;
+  left: 20px;
+  padding: 12px 20px;
+  background: #0a0a0a;
+  color: #fff;
+}
+.skip-link:focus {
+  top: 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

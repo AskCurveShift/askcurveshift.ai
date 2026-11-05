@@ -8,6 +8,7 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 import { Container } from '@/components/Container'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Footer } from '@/components/Footer'
+import { GridPattern } from '@/components/GridPattern'
 import { site } from '@/lib/site'
 
 function NavigationRow({ children }: { children: React.ReactNode }) {
@@ -193,10 +194,15 @@ function RootLayoutInner({
           <motion.div
             layout
             className={clsx(
-              'personal-site relative isolate flex w-full flex-col pt-9',
+              'studio-content relative isolate flex w-full flex-col pt-9',
               className,
             )}
           >
+            <GridPattern
+              className="pointer-events-none absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-50 stroke-neutral-950/5"
+              yOffset={-96}
+              interactive={!shouldReduceMotion}
+            />
             <main id="main-content" className="w-full flex-auto">
               {children}
             </main>

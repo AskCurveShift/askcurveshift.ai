@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 @import './base.css';
 @import './typography.css' layer(components);
-@import './site.css';
-@import './personal-site.css';
+@import './article-charts.css';
+@import './spotlight-about.css';
 @import './studio-shell.css';
 
 @theme {
