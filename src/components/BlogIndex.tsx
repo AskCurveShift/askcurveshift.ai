@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Border } from '@/components/Border'
@@ -39,28 +38,6 @@ export async function BlogIndex() {
                           <time dateTime={article.date}>
                             {formatDate(article.date)}
                           </time>
-                        </dd>
-                        <dt className="sr-only">Author</dt>
-                        <dd className="mt-6 flex gap-x-4">
-                          {article.author?.image && (
-                            <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
-                              <Image
-                                alt=""
-                                {...article.author.image}
-                                className="h-12 w-12 object-cover grayscale"
-                              />
-                            </div>
-                          )}
-                          <div className="text-sm text-neutral-950">
-                            <Link
-                              href="/about/"
-                              rel="author"
-                              className="font-semibold"
-                            >
-                              {article.author?.name || 'Drew Russell'}
-                            </Link>
-                            <div>{article.author?.role || 'Curve Shift'}</div>
-                          </div>
                         </dd>
                         <dt className="sr-only">Topic and reading time</dt>
                         <dd className="mt-6 text-sm text-neutral-600">
