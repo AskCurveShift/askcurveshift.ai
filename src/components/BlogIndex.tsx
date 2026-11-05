@@ -15,10 +15,7 @@ export async function BlogIndex() {
 
   return (
     <RootLayout>
-      <PageIntro
-        eyebrow="Curve Shift · A blog by Drew Russell"
-        title="Field notes for the next stage."
-      >
+      <PageIntro title="Field notes for the next stage.">
         <p>
           An independent perspective on cybersecurity, AI, technical sales, and
           the decisions that shape how businesses grow.
