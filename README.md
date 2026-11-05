@@ -23,9 +23,9 @@ The existing Steady homepage and privacy policy are retained in `public/steady/`
 
 ## Navigation and layout
 
-Studio is the default theme for the homepage, `/blog/`, article pages, navigation, and footer. The original licensed `PageIntro`, `Container`, `Border`, `Button`, typography, and grid background provide the layout. The menu contains Blog and About; RSS replaces Contact us and the newsletter form.
+Studio is the default theme for the homepage, `/blog/`, article pages, navigation, and footer. The original licensed `PageIntro`, `Container`, `Border`, `Button`, typography, and grid background provide the layout. Blog and About are always visible beside RSS in the shared header. On narrow screens, the links occupy a second row beneath the logo. There is no hamburger menu. RSS replaces Contact us and the newsletter form.
 
-Spotlight is limited to the About page content. Its styles live in `src/styles/spotlight-about.css` and do not override the blog. Article chart styles are isolated in `src/styles/article-charts.css`. The previous shared custom page styles have been removed. Navigation supports Escape, focus return, and inert collapsed content.
+Spotlight is limited to the About page content. Its styles live in `src/styles/spotlight-about.css` and do not override the blog. Article chart styles are isolated in `src/styles/article-charts.css`. The previous shared custom page styles have been removed. The active navigation destination is indicated visually and with `aria-current`.
 
 ## Articles
 
