@@ -1,0 +1,24 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "C7XUJR4RQW.com.drewrussell.pushupcoach",
+          "C7XUJR4RQW.com.drewrussell.souldebt"
+        ],
+        "components": [
+          {
+            "/": "/steady/openrouter/callback/",
+            "comment": "OpenRouter OAuth callback only"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "C7XUJR4RQW.com.drewrussell.pushupcoach",
+      "C7XUJR4RQW.com.drewrussell.souldebt"
+    ]
+  }
+}
