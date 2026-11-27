@@ -17,6 +17,7 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   images: { unoptimized: true },
+  experimental: { agentUpgrade: 'security' },
   webpack(config, { isServer }) {
     // Preserve the RSC layer for MDX with metadata on patched Next.js releases.
     // https://github.com/vercel/next.js/issues/91735
