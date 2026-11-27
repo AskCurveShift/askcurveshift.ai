@@ -8,8 +8,12 @@
         ],
         "components": [
           {
-            "/": "/steady/openrouter/callback/",
+            "/": "/steady/openrouter/callback",
             "comment": "OpenRouter OAuth callback only"
+          },
+          {
+            "/": "/steady/openrouter/callback/",
+            "comment": "OpenRouter OAuth callback trailing-slash fallback"
           }
         ]
       }
